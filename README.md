@@ -12,11 +12,14 @@ This repo is a working project that lists cars based on a local API response. It
 
 ## Challenge ideas
 - My idea was to focus in the fuctionality of the application.
-- I created three videos where I talk and explain a little bit of what I thought to deliver in this challenge
+- I created 3 (three) videos where I talk and explain a little bit of what I thought to deliver in this challenge
 
-- ![Setup-Video](https://www.loom.com/share/551130030c8e450ebdb3d7f61ed12fb4)
-- ![AppRunning-Video](https://www.loom.com/share/ab09227d24ff48d099acfa674a094e4e)
-- ![UnitTests-Video](https://www.loom.com/share/2759bedbb7bc4c3b92c16426741330e5)
+- [Setup Video](https://www.loom.com/share/551130030c8e450ebdb3d7f61ed12fb4)
+- [App Running Video](https://www.loom.com/share/ab09227d24ff48d099acfa674a094e4e)
+- [UnitTests Video](https://www.loom.com/share/2759bedbb7bc4c3b92c16426741330e5)
+
+In those tutorials I teach you how to setup the application, run and test it.
+I hope you enjoy it!
 
 ### Homework
 
