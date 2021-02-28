@@ -1,0 +1,25 @@
+version: '3.0'
+services:
+  postgres:
+    image: postgres:11.4
+    container_name: garage_start_postgres_service
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    expose:
+      - 5432
+    ports:
+      - "5432:5432"
+    networks:
+      - garage-start-network
+    restart: unless-stopped
+
+volumes:
+  postgres:
+
+networks:
+  garage-start-network:
+    driver: bridge
