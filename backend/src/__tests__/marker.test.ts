@@ -14,7 +14,7 @@ const markerMock: MarkerMock = new MarkerMock()
 const ENDPOINT: string = '/marker'
 const IP: string = faker.internet.ip()
 
-describe.only('#Marker', (): void => {
+describe('#Marker', (): void => {
     const mockCar = async (): Promise<Car> => carMock.create()
     const mockMarker = async (params): Promise<Marker> => markerMock.create(params)
 
