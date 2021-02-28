@@ -1,8 +1,8 @@
 import { Router } from 'express'
 import authentication from './middlewares/authentication'
 import parseIPToBody from './middlewares/parse-ip-to-body'
-import { CarCtrl } from './controller/Car'
-import { MarkerCtrl } from './controller/Marker'
+import { CarCtrl } from './controllers/Car'
+import { MarkerCtrl } from './controllers/Marker'
 
 const router = Router()
 

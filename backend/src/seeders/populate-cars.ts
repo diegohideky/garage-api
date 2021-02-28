@@ -1,6 +1,6 @@
-import 'reflect-metadata';
-import {createConnection} from 'typeorm';
-import {Car} from '../entity/Car';
+import 'reflect-metadata'
+import { createConnection } from 'typeorm'
+import { Car } from '../models/Car'
 import { items } from '../cars.json'
 
 createConnection().then(async conn => {

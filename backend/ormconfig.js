@@ -16,24 +16,22 @@ if (process.env.NODE_ENV !== 'test') {
 
 dotenv.config({ path: CONFIG_FILE })
 
-console.log(process.env.DATABASE_URL)
-
 module.exports = {
    type: 'postgres',
    url: process.env.DATABASE_URL,
    synchronize: true,
    logging: false,
    entities: [
-      'src/entity/**/*.ts'
+      'src/models/**/*.{ts,js}'
    ],
    migrations: [
-      'src/migration/**/*.ts'
+      'src/migration/**/*.{ts,js}'
    ],
    subscribers: [
-      'src/subscriber/**/*.ts'
+      'src/subscriber/**/*.{ts,js}'
    ],
    cli: {
-      'entitiesDir': 'src/entity',
+      'entitiesDir': 'src/models',
       'migrationsDir': 'src/migration',
       'subscribersDir': 'src/subscriber'
    }

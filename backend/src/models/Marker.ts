@@ -4,7 +4,7 @@ import { Car } from './Car';
 @Entity()
 export class Marker {
     @PrimaryGeneratedColumn('uuid')
-    id: number;
+    id: string;
 
     @Column()
     ip: string;

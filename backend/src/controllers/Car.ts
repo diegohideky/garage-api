@@ -1,16 +1,7 @@
 import { Request, Response } from 'express'
 import { getRepository, Repository } from 'typeorm'
-import { Car } from '../entity/Car'
-import { Marker } from '../entity/Marker'
-
-interface CarProps {
-    id: number
-    model: string
-    make: string
-    year: number
-    image: string
-    marked: boolean
-}
+import { Car } from '../models/Car'
+import { Marker } from '../models/Marker'
 
 export class CarCtrl {
     async findAll(req: Request, res: Response) {
@@ -22,7 +13,7 @@ export class CarCtrl {
 
             const markerRepo: Repository<Marker> = getRepository(Marker)
 
-            const cars: CarProps[] = await Promise.
+            const cars = await Promise.
                 all(items.map(async item => {
                     const marker = await markerRepo.findOne({ where: { ip, car: item.id }})
                     return { ...item, marked: marker && marker.marked ? marker.marked : false } 

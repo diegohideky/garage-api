@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { getRepository, Repository } from 'typeorm'
-import { Marker } from '../entity/Marker'
+import { Marker } from '../models/Marker'
 
 export class MarkerCtrl {
     async save(req: Request, res: Response) {
@@ -8,11 +8,11 @@ export class MarkerCtrl {
         try {
             const repository: Repository<Marker> = getRepository(Marker)
 
-            const found = await repository.findOne({ where: { car: carId } })
+            const existing = await repository.findOne({ where: { car: carId, ip } })
 
-            const payload = !found
+            const payload = !existing
                 ? await repository.save({ ip, car: carId, marked: true })
-                : await repository.save({ ...found, marked: !found.marked })
+                : await repository.save({ ...existing, marked: !existing.marked })
 
             return res.status(200).json({ payload })
         } catch (error) {
